@@ -31,9 +31,11 @@ test("user signin", async () => {
     await homePage.clickSuggestedEmail();
     await homePage.clickContinue();
     await homePage.enterPassword();
+    await homePage.clickSignIn2();
+    await homePage.moveSliderToRight();
 },80000);
 
 
-afterAll(async () => {
+/*afterAll(async () => {
     await quitDriver(driver);
-},10000);
+},10000);*/

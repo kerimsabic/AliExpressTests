@@ -18,25 +18,21 @@ let homePage: HomePage;
 beforeAll(async () => {
     driver = await createDriver(testData.url.home_page);
     homePage = new HomePage(driver);
+    
 },80000);
 
 
-test("user registration", async () => {
+test("user signin", async () => {
     await homePage.closePopup();
-  //  await homePage.navigateToHomePage();
-    await homePage.hoverOverAccountIcon();
-    await homePage.clickRegister();
-    //await homePage.clickRegisterWithGoogle();
-    await homePage.enterEmail();
-    await homePage.clickSuggestedEmail();
-    await homePage.clickContinue();
-    await homePage.enterRegisterPassword();
-    await homePage.clickFinalRegisterButton();
-    await homePage.clickFeedback();
-   // await homePage.moveSliderToRight();
+    await homePage.enterSearch();
+    await homePage.clickSearchButton();
+    await homePage.applyFilter1();
+    await homePage.applyFilter2();
+    await homePage.applySort();
+
 },80000);
 
 
-/*afterAll(async () => {
+afterAll(async () => {
     await quitDriver(driver);
-},10000);*/
+},10000);

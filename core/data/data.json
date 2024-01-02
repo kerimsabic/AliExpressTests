@@ -7,5 +7,9 @@
      "loginData":{
         "email":"sometesting2023@gmail.com",
         "password":"Sifra1."
-     } 
+     } ,
+
+     "searchTerms:":{
+        "termPhoneCase":"phonecase"
+     }
 }  
