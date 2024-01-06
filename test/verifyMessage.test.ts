@@ -21,7 +21,7 @@ beforeAll(async () => {
 },80000);
 
 
-test("Verify Checkout ", async () => {
+test("Verify Message ", async () => {
    
     await homePage.clickAccountIcon();
     await homePage.clickSignIn();
