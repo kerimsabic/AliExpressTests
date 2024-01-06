@@ -34,8 +34,8 @@ export class HomePage extends BasePage {
     private suggestedPhoneCase = By.xpath('/html/body/div[1]/div[4]/div/div[1]/div[2]/div/div[1]/div/div/div/ul/li[1]/a');
     private redPhoneCaseObject = By.xpath('/html/body/div[6]/div[1]/div/div[2]/div[2]/div/div[1]/div/a');
     private titleOfRedPhoneCase = By.xpath('/html/body/div[6]/div[1]/div/div[2]/div[2]/div/div[1]/div/a/div[2]/div[1]/h1');
-    private miuiFilter = By.xpath('/html/body/div[6]/div[1]/div/div[1]/div[2]/div[2]/span/span[3]/span[1]');
-    private freeShippingFilter = By.xpath('/html/body/div[6]/div[1]/div/div[1]/div[1]/div[2]/span/span[2]/span[1]');
+    private miuiFilter = By.xpath('//*[@id="root"]/div[1]/div/div[1]/div[3]/div[2]/span/span[3]/span[1]');
+    private freeShippingFilter = By.xpath('/html/body/div[6]/div[1]/div/div[1]/div[1]/div[2]/span/span[2]/span[1]'); // this might cause the problem
     private priceSort=By.xpath('/html/body/div[6]/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div[3]');
     private redDimondsLetterPhoneCase=By.xpath('/html/body/div[6]/div[1]/div/div[2]/div[3]/div/div/div/a');
     private addToCartButtonOnImage=By.xpath('/html/body/div[6]/div[1]/div/div[2]/div[3]/div/div[1]/div/a/div[1]/div[2]');
@@ -48,6 +48,12 @@ export class HomePage extends BasePage {
     private deliverySpan=By.className('order-item-header-status-text');
     private messageIcon = By.xpath('/html/body/div[9]/div/div/div[2]/div/div/ul[1]/li[3]/a ');
     private messageSpan = By.className('session-toolbar__title');
+    private BosniaLogo=By.className('es--wrap--RYjm1RT');
+    private currenryDropown=By.xpath('//*[@id="_full_container_header_23_"]/div[2]/div/div[2]/div[2]/div[2]/div[6]/div/div[1]');
+    private USDCurrency=By.xpath('//*[@id="_full_container_header_23_"]/div[2]/div/div[2]/div[2]/div[2]/div[6]/div/div[2]/div[3]');
+    private saveCurrecy=By.xpath('//*[@id="_full_container_header_23_"]/div[2]/div/div[2]/div[2]/div[2]/div[7]');
+    private onSearchUSDCurrency=By.xpath('//*[@id="priceWrap"]/div/span[1]');
+   
 
 
 
@@ -208,6 +214,23 @@ export class HomePage extends BasePage {
     async checkMessageSpan(){
         await this.waitForElement(this.messageSpan,50000);
         await this.checkMatchingElements(this.messageSpan, "Messages");
+    }
+
+    async clickOnBosnia(){
+        await this.findElementAndClick(this.BosniaLogo);
+    }
+    async clickOnCurrency(){
+        await this.findElementAndClick(this.currenryDropown);
+    }
+    async clickUSD(){
+        await this.findElementAndClick(this.USDCurrency);
+    }
+    async clickSave(){
+        await this.findElementAndClick(this.saveCurrecy);
+    }
+    async checkCurrency(){
+       
+        await this.checkMatchingElements(this.onSearchUSDCurrency, "US $")
     }
 
 

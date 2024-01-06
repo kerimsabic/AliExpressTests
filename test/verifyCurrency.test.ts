@@ -24,16 +24,12 @@ beforeAll(async () => {
 
 test("user signin", async () => {
     await homePage.closePopup();
-    await homePage.enterSearch();
-    await homePage.clickSearchButton();
-    await homePage.applyFilter1();
-    await homePage.applyFilter2();
-    await homePage.applySort();
-    await homePage.clickAddToCart();
-    await homePage.clickAddToCart2();
-    await homePage.clickOnCartButton();
-    await homePage.checkIfElementInCart();
-    
+    await homePage.clickOnBosnia();
+    await homePage.clickOnCurrency();
+    await homePage.clickUSD();
+    await homePage.clickSave();
+    await driver.sleep(5000);
+    await homePage.checkCurrency();
 
 },80000);
 
