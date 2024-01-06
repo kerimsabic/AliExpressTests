@@ -1,7 +1,8 @@
 
 {
     "url": {
-          "home_page": "https://www.aliexpress.com/"
+          "home_page": "https://www.aliexpress.com/",
+          "order_page": "https://www.aliexpress.com/p/order/index.html"
       },
 
      "loginData":{

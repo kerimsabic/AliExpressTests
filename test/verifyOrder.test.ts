@@ -46,8 +46,6 @@ export class HomePage extends BasePage {
     private placeOrderButton=By.xpath('//*[@id="placeorder_wrap__inner"]/div/div[2]/div[2]/div/div/div[3]/button');
     private AddresDiv=By.className('comet-modal-title');
     private deliverySpan=By.className('order-item-header-status-text');
-    private messageIcon = By.xpath('/html/body/div[9]/div/div/div[2]/div/div/ul[1]/li[3]/a ');
-    private messageSpan = By.className('session-toolbar__title');
 
 
 
@@ -201,13 +199,6 @@ export class HomePage extends BasePage {
     async checkDeliverySpan(){
         await this.waitForElement(this.deliverySpan,50000);
         await this.checkMatchingElements(this.deliverySpan, "Awaiting delivery");
-    }
-    async clickMessageIcon(){
-        await this.waitAndClick(this.messageIcon,2000);
-    }
-    async checkMessageSpan(){
-        await this.waitForElement(this.messageSpan,50000);
-        await this.checkMatchingElements(this.messageSpan, "Messages");
     }
 
 
