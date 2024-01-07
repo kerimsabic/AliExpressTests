@@ -53,6 +53,9 @@ export class HomePage extends BasePage {
     private USDCurrency=By.xpath('//*[@id="_full_container_header_23_"]/div[2]/div/div[2]/div[2]/div[2]/div[6]/div/div[2]/div[3]');
     private saveCurrecy=By.xpath('//*[@id="_full_container_header_23_"]/div[2]/div/div[2]/div[2]/div[2]/div[7]');
     private onSearchUSDCurrency=By.xpath('//*[@id="priceWrap"]/div/span[1]');
+    private deleteFromCart=By.xpath('//*[@id="root"]/div[1]/div[1]/div[1]/div[1]/div/div[2]/div/div/div');
+    private removeButton=By.xpath('/html/body/div[13]/div[2]/div/div[2]/div[2]/button[1]');
+    private noItemsText=By.xpath('//*[@id="root"]/div[1]/div[1]/div/div[3]/div/span');
    
 
 
@@ -231,6 +234,16 @@ export class HomePage extends BasePage {
     async checkCurrency(){
        
         await this.checkMatchingElements(this.onSearchUSDCurrency, "US $")
+    }
+
+    async deleteFromCartAction(){
+        await this.findElementAndClick(this.deleteFromCart);
+    }
+    async clickRemoveButton(){
+        await this.findElementAndClick(this.removeButton)
+    }
+    async checkNoItemsText(){
+        await this.checkMatchingElements(this.noItemsText, "No items yet? Continue shopping to explore more.")
     }
 
 
